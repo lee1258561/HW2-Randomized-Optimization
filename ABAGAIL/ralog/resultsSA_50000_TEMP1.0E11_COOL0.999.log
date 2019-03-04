@@ -1,0 +1,8 @@
+
+Results for SA: 
+Correctly classified 299.0 instances.
+Incorrectly classified 317.0 instances.
+Percent correctly classified: 86.500Validation Accuracy: 48.539%
+Training time: 1711.091 seconds
+Testing time: 0.022 seconds
+

@@ -1,0 +1,8 @@
+
+Results for RHC: 
+Correctly classified 365.0 instances.
+Incorrectly classified 42.0 instances.
+Percent correctly classified: 99.562Validation Accuracy: 89.681%
+Training time: 1600.549 seconds
+Testing time: 0.020 seconds
+

@@ -1,0 +1,8 @@
+
+Results for GA: 
+Correctly classified 302.0 instances.
+Incorrectly classified 279.0 instances.
+Percent correctly classified: 88.688Validation Accuracy: 51.979%
+Training time: 5491.963 seconds
+Testing time: 0.018 seconds
+
