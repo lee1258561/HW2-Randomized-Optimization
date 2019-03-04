@@ -112,106 +112,106 @@ def process_restart(error, train_acc, test_acc):
 
 def main():
     fig_dir = create_path("fig")
-    # fig_path = os.path.join(fig_dir, "RHC")
-    # error, train_acc, test_acc = load_log("RHC_50000.log")
-    # x = list(range(len(error)))
-    # plot_and_save(x, [error], ['50000 iterations'], "RHC Error", "Iterations", "Error", fig_path=fig_path + "_error", format="png")
-    # plot_and_save(x, [train_acc, test_acc], ['Training Acc', 'Testing Acc'], "RHC Accuracy", "Iterations", "Acc %", fig_path=fig_path + "_accuracy", format="png")
+    fig_path = os.path.join(fig_dir, "RHC")
+    error, train_acc, test_acc = load_log("RHC_50000.log")
+    x = list(range(len(error)))
+    plot_and_save(x, [error], ['50000 iterations'], "RHC Error", "Iterations", "Error", fig_path=fig_path + "_error", format="png")
+    plot_and_save(x, [train_acc, test_acc], ['Training Acc', 'Testing Acc'], "RHC Accuracy", "Iterations", "Acc %", fig_path=fig_path + "_accuracy", format="png")
 
-    # error, train_acc, test_acc = load_log("restart10_RHC_50000.log")
-    # # error, train_acc, test_acc = process_restart(error, train_acc, test_acc)
-    # plot_and_save(list(range(len(train_acc))), 
-    #                [train_acc, test_acc], 
-    #                ["Training Accuracy", "Testing Accuracy"], 
-    #                "Accuracy vs Restart Time", "# Restart", "Acc %", 
-    #                fig_path=fig_path + "_restart", format='png')
+    error, train_acc, test_acc = load_log("restart10_RHC_50000.log")
+    # error, train_acc, test_acc = process_restart(error, train_acc, test_acc)
+    plot_and_save(list(range(len(train_acc))), 
+                   [train_acc, test_acc], 
+                   ["Training Accuracy", "Testing Accuracy"], 
+                   "Accuracy vs Restart Time", "# Restart", "Acc %", 
+                   fig_path=fig_path + "_restart", format='png')
 
-    # plot_bar_chart(list(range(len(train_acc))), 
-    #                [error], 
-    #                ["Training Error"], 
-    #                "Error vs Restart Time", "# Restart", "Error", 
-    #                fig_path=fig_path + "_restart_error", format='png')
-
-
-    # SA_temp_plots = ["SA_50000_TEMP100000.0_COOL0.995.log",
-    #                  "SA_50000_TEMP1.0E8_COOL0.995.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.995.log",
-    #                  "SA_50000_TEMP1.0E14_COOL0.995.log",
-    #                  "SA_50000_TEMP1.0E17_COOL0.995.log"]
-    # legend = ["temp = 1e5", "temp = 1e8", "temp = 1e11", "temp = 1e14", "temp = 1e17"]
-
-    # fig_path = os.path.join(fig_dir, "SA_temp")
-    # create_fig(SA_temp_plots, legend, "SA Temperture", fig_path)
-
-    # SA_cool_plots = ["SA_50000_TEMP1.0E11_COOL0.9.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.95.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.99.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.995.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.999.log",]
-    # legend = ["cool down = 0.9", "cool down = 0.95", "cool down = 0.99", "cool down = 0.995", "cool down = 0.999"]
-
-    # fig_path = os.path.join(fig_dir, "SA_cool_down")
-    # create_fig(SA_cool_plots, legend, "SA Cool Down", fig_path, locs=["upper right", "lower right", "lower right"])
-
-    # GA_pop_plots = ["GA_5000_POP200_MAT100_MU10.log",
-    #                 "GA_5000_POP500_MAT100_MU10.log",
-    #                 "GA_5000_POP1000_MAT100_MU10.log",]
-    # legend = ["population = 200", "population = 500", "population = 1000"]
-
-    # fig_path = os.path.join(fig_dir, "GA_pop")
-    # create_fig(GA_pop_plots, legend, "GA Population", fig_path)
-
-    # GA_mate_plots = ["GA_5000_POP500_MAT50_MU10.log",
-    #                  "GA_5000_POP500_MAT75_MU10.log",
-    #                  "GA_5000_POP500_MAT100_MU10.log",
-    #                  "GA_5000_POP500_MAT125_MU10.log",
-    #                  "GA_5000_POP500_MAT150_MU10.log"]
-    # legend = ["mate = 50", "mate = 75", "mate = 100", "mate = 125", "mate = 150"]
-
-    # fig_path = os.path.join(fig_dir, "GA_mate")
-    # create_fig(GA_mate_plots, legend, "GA Mate", fig_path)
-
-    # GA_mutate_plots = ["GA_5000_POP500_MAT75_MU50.log",
-    #                  "GA_5000_POP500_MAT75_MU75.log",
-    #                  "GA_5000_POP500_MAT75_MU100.log",
-    #                  "GA_5000_POP500_MAT75_MU125.log",
-    #                  "GA_5000_POP500_MAT75_MU150.log"]
-    # legend = ["mutate = 50", "mutate = 75", "mutate = 100", "mutate = 125", "mutate = 150"]
-
-    # fig_path = os.path.join(fig_dir, "GA_mutate")
-    # create_fig(GA_mutate_plots, legend, "GA Mutate", fig_path)
-
-    # Compare_plots = ["RHC_50000.log",
-    #                  "SA_50000_TEMP1.0E11_COOL0.95.log",
-    #                  "GA_5000_POP500_MAT75_MU150.log"]
-
-    # legend = ["RHC", "SA", "GA"]
-
-    # fig_path = os.path.join(fig_dir, "Algorithm Comparison")
-    # create_fig(Compare_plots, legend, "Compare", fig_path)
-
-    # Promblem 1 TSP
-    # RHC_fitness, _, _ = load_log("TSP_RHC.log", part2=True);
-    # SA_fitness, _, _ = load_log("TSP_SA.log", part2=True);
-    # GA_fitness, _, _ = load_log("TSP_GA.log", part2=True);
-    # MIMIC_fitness, _, _ = load_log("TSP_MIMIC.log", part2=True);
-    # fitnesses = [RHC_fitness, SA_fitness, GA_fitness, MIMIC_fitness]
-    # legend = ["RHC", "SA", "GA", "MIMIC"]
-    # fig_path = os.path.join(fig_dir, "TSP_fitness")
-    # plot_and_save(list(range(len(fitnesses[0]))), fitnesses, legend, "Traveling Salesman", "Iterations", "Fitness", fig_path=fig_path, format="png")
+    plot_bar_chart(list(range(len(train_acc))), 
+                   [error], 
+                   ["Training Error"], 
+                   "Error vs Restart Time", "# Restart", "Error", 
+                   fig_path=fig_path + "_restart_error", format='png')
 
 
-    # RHC_fitness, _, _ = load_log("FP_RHC.log", part2=True);
-    # SA_fitness, _, _ = load_log("FP_SA.log", part2=True);
-    # GA_fitness, _, _ = load_log("FP_GA.log", part2=True);
-    # MIMIC_fitness, _, _ = load_log("FP_MIMIC.log", part2=True);
-    # fitnesses = [RHC_fitness, SA_fitness, GA_fitness, MIMIC_fitness + [MIMIC_fitness[-1]] * 10000]
-    # legend = ["RHC", "SA", "GA", "MIMIC"]
-    # fig_path = os.path.join(fig_dir, "FP_fitness")
-    # plot_and_save(list(range(len(fitnesses[0]))), fitnesses, legend, "Four Peaks", "Iterations", "Fitness", fig_path=fig_path, format="png")
+    SA_temp_plots = ["SA_50000_TEMP100000.0_COOL0.995.log",
+                     "SA_50000_TEMP1.0E8_COOL0.995.log",
+                     "SA_50000_TEMP1.0E11_COOL0.995.log",
+                     "SA_50000_TEMP1.0E14_COOL0.995.log",
+                     "SA_50000_TEMP1.0E17_COOL0.995.log"]
+    legend = ["temp = 1e5", "temp = 1e8", "temp = 1e11", "temp = 1e14", "temp = 1e17"]
 
-    # RHC_fitness, _, _ = load_log("MAXK_RHC.log", part2=True);
-    # SA_fitness, _, _ = load_log("MAXK_SA.log", part2=True);
+    fig_path = os.path.join(fig_dir, "SA_temp")
+    create_fig(SA_temp_plots, legend, "SA Temperture", fig_path)
+
+    SA_cool_plots = ["SA_50000_TEMP1.0E11_COOL0.9.log",
+                     "SA_50000_TEMP1.0E11_COOL0.95.log",
+                     "SA_50000_TEMP1.0E11_COOL0.99.log",
+                     "SA_50000_TEMP1.0E11_COOL0.995.log",
+                     "SA_50000_TEMP1.0E11_COOL0.999.log",]
+    legend = ["cool down = 0.9", "cool down = 0.95", "cool down = 0.99", "cool down = 0.995", "cool down = 0.999"]
+
+    fig_path = os.path.join(fig_dir, "SA_cool_down")
+    create_fig(SA_cool_plots, legend, "SA Cool Down", fig_path, locs=["upper right", "lower right", "lower right"])
+
+    GA_pop_plots = ["GA_5000_POP200_MAT100_MU10.log",
+                    "GA_5000_POP500_MAT100_MU10.log",
+                    "GA_5000_POP1000_MAT100_MU10.log",]
+    legend = ["population = 200", "population = 500", "population = 1000"]
+
+    fig_path = os.path.join(fig_dir, "GA_pop")
+    create_fig(GA_pop_plots, legend, "GA Population", fig_path)
+
+    GA_mate_plots = ["GA_5000_POP500_MAT50_MU10.log",
+                     "GA_5000_POP500_MAT75_MU10.log",
+                     "GA_5000_POP500_MAT100_MU10.log",
+                     "GA_5000_POP500_MAT125_MU10.log",
+                     "GA_5000_POP500_MAT150_MU10.log"]
+    legend = ["mate = 50", "mate = 75", "mate = 100", "mate = 125", "mate = 150"]
+
+    fig_path = os.path.join(fig_dir, "GA_mate")
+    create_fig(GA_mate_plots, legend, "GA Mate", fig_path)
+
+    GA_mutate_plots = ["GA_5000_POP500_MAT75_MU50.log",
+                     "GA_5000_POP500_MAT75_MU75.log",
+                     "GA_5000_POP500_MAT75_MU100.log",
+                     "GA_5000_POP500_MAT75_MU125.log",
+                     "GA_5000_POP500_MAT75_MU150.log"]
+    legend = ["mutate = 50", "mutate = 75", "mutate = 100", "mutate = 125", "mutate = 150"]
+
+    fig_path = os.path.join(fig_dir, "GA_mutate")
+    create_fig(GA_mutate_plots, legend, "GA Mutate", fig_path)
+
+    Compare_plots = ["RHC_50000.log",
+                     "SA_50000_TEMP1.0E11_COOL0.95.log",
+                     "GA_5000_POP500_MAT75_MU150.log"]
+
+    legend = ["RHC", "SA", "GA"]
+
+    fig_path = os.path.join(fig_dir, "Algorithm Comparison")
+    create_fig(Compare_plots, legend, "Compare", fig_path)
+
+    #Promblem 1 TSP
+    RHC_fitness, _, _ = load_log("TSP_RHC.log", part2=True);
+    SA_fitness, _, _ = load_log("TSP_SA.log", part2=True);
+    GA_fitness, _, _ = load_log("TSP_GA.log", part2=True);
+    MIMIC_fitness, _, _ = load_log("TSP_MIMIC.log", part2=True);
+    fitnesses = [RHC_fitness, SA_fitness, GA_fitness, MIMIC_fitness]
+    legend = ["RHC", "SA", "GA", "MIMIC"]
+    fig_path = os.path.join(fig_dir, "TSP_fitness")
+    plot_and_save(list(range(len(fitnesses[0]))), fitnesses, legend, "Traveling Salesman", "Iterations", "Fitness", fig_path=fig_path, format="png")
+
+
+    RHC_fitness, _, _ = load_log("FP_RHC.log", part2=True);
+    SA_fitness, _, _ = load_log("FP_SA.log", part2=True);
+    GA_fitness, _, _ = load_log("FP_GA.log", part2=True);
+    MIMIC_fitness, _, _ = load_log("FP_MIMIC.log", part2=True);
+    fitnesses = [RHC_fitness, SA_fitness, GA_fitness, MIMIC_fitness + [MIMIC_fitness[-1]] * 10000]
+    legend = ["RHC", "SA", "GA", "MIMIC"]
+    fig_path = os.path.join(fig_dir, "FP_fitness")
+    plot_and_save(list(range(len(fitnesses[0]))), fitnesses, legend, "Four Peaks", "Iterations", "Fitness", fig_path=fig_path, format="png")
+
+    RHC_fitness, _, _ = load_log("MAXK_RHC.log", part2=True);
+    SA_fitness, _, _ = load_log("MAXK_SA.log", part2=True);
     GA_fitness, _, _ = load_log("MAXK_GA.log", part2=True);
     MIMIC_fitness, _, _ = load_log("MAXK_MIMIC.log", part2=True);
     fitnesses = [GA_fitness, MIMIC_fitness + [MIMIC_fitness[int(-1)]] * 45]

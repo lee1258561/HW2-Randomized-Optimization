@@ -25,5 +25,5 @@
 	java -cp ABAGAIL.jar opt.test.MaxKColoringTest
 		Run and log the result of optimizing Max-K-Coloring problem with each of the four algorithms
 
-	python plot.py (run this under root dir)
+	python plot.py
 		create all figures presented in the report. Placed under fig/
