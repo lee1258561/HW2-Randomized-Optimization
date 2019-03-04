@@ -84,29 +84,29 @@ public class MaxKColoringTest {
         double start;
         long starttime = System.currentTimeMillis();
         RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
-        // FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 20000);
+        //FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 20000);
         // fit.train();
-        // start = System.nanoTime();
-        // fixedIterationTraining(rhc, 20000, "MAXK_RHC.log");
-        // System.out.println("RHC: " + ef.value(rhc.getOptimal()));
-        // System.out.println("Training Time: " + (System.nanoTime() - start) / Math.pow(10,9));
-        // System.out.println(ef.foundConflict());
-        // System.out.println("Time : "+ (System.currentTimeMillis() - starttime));
+        start = System.nanoTime();
+        fixedIterationTraining(rhc, 20000, "MAXK_RHC.log");
+        System.out.println("RHC: " + ef.value(rhc.getOptimal()));
+        System.out.println("Training Time: " + (System.nanoTime() - start) / Math.pow(10,9));
+        System.out.println(ef.foundConflict());
+        System.out.println("Time : "+ (System.currentTimeMillis() - starttime));
         
-        // System.out.println("============================");
+        System.out.println("============================");
         
-        // starttime = System.currentTimeMillis();
-        // SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .1, hcp);
-        // // fit = new FixedIterationTrainer(sa, 20000);
-        // // fit.train();
-        // start = System.nanoTime();
-        // fixedIterationTraining(sa, 20000, "MAXK_SA.log");
-        // System.out.println("SA: " + ef.value(sa.getOptimal()));
-        // System.out.println("Training Time: " + (System.nanoTime() - start) / Math.pow(10,9));
-        // System.out.println(ef.foundConflict());
-        // System.out.println("Time : "+ (System.currentTimeMillis() - starttime));
+        starttime = System.currentTimeMillis();
+        SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .1, hcp);
+        // fit = new FixedIterationTrainer(sa, 20000);
+        // fit.train();
+        start = System.nanoTime();
+        fixedIterationTraining(sa, 20000, "MAXK_SA.log");
+        System.out.println("SA: " + ef.value(sa.getOptimal()));
+        System.out.println("Training Time: " + (System.nanoTime() - start) / Math.pow(10,9));
+        System.out.println(ef.foundConflict());
+        System.out.println("Time : "+ (System.currentTimeMillis() - starttime));
         
-        // System.out.println("============================");
+        System.out.println("============================");
         
         starttime = System.currentTimeMillis();
         StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 10, 60, gap);

@@ -35,8 +35,8 @@ public class MNISTTest {
 
     private static String[] oaNames = {"RHC", "SA", "GA"};
     private static int[] oaIters = {50000, 50000, 5000};
-    private static int population = 800, mate = 100, mutate = 10, RHCRestart = 10;
-    private static double temp = 1E11, coolRate = .999;
+    private static int population = 500, mate = 75, mutate = 150, RHCRestart = 6;
+    private static double temp = 1E11, coolRate = .95;
 
     private static boolean verbose = true; 
 
